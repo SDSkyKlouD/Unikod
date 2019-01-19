@@ -61,13 +61,23 @@ dotnet_style_coalesce_expression = true:warning
 dotnet_style_null_propagation = true:warning
 
 # Naming Conv: Camel-case for private fields
-dotnet_naming_symbols.camel_case_for_fields.applicable_kinds = field
-dotnet_naming_symbols.camel_case_for_fields.applicable_accessibilities = private,local
-dotnet_naming_rule.use_camel_case_for_fields.style = camel_case_field_style
-dotnet_naming_rule.use_camel_case_for_fields.symbols = camel_case_for_fields
-dotnet_naming_rule.use_camel_case_for_fields.severity = warning
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
 dotnet_naming_style.camel_case_field_style.required_prefix = _
 dotnet_naming_style.camel_case_field_style.capitalization = camel_case
+dotnet_naming_rule.use_camel_case_for_fields.style = camel_case_field_style
+dotnet_naming_rule.use_camel_case_for_fields.symbols = private_fields
+dotnet_naming_rule.use_camel_case_for_fields.severity = warning
+
+# Naming Conv: All uppercase for public/internal static/shared constant fields/properties
+dotnet_naming_symbols.public_constant_fields_and_properties.applicable_kinds = field,property
+dotnet_naming_symbols.public_constant_fields_and_properties.applicable_accessibilities = public,internal
+dotnet_naming_symbols.public_constant_fields_and_properties.required_modifiers = static,const,readonly
+dotnet_naming_style.constants_uppercase_style.word_separator = _
+dotnet_naming_style.constants_uppercase_style.capitalization = all_upper
+dotnet_naming_rule.use_uppercase_for_public_static_constants.style = constants_uppercase_style
+dotnet_naming_rule.use_uppercase_for_public_static_constants.symbols = public_constant_fields_and_properties
+dotnet_naming_rule.use_uppercase_for_public_static_constants.severity = warning
 
 ###########################
 #  C# coding conventions  #
@@ -124,7 +134,7 @@ csharp_space_after_cast = true
 csharp_space_after_keywords_in_control_flow_statements = false
 csharp_space_between_method_declaration_parameter_list_parentheses = false
 csharp_space_between_method_call_parameter_list_parentheses = false
-csharp_space_between_parentheses = none
+csharp_space_between_parentheses = false
 csharp_space_before_colon_in_inheritance_clause = true
 csharp_space_after_colon_in_inheritance_clause = false
 csharp_space_around_binary_operators = before_and_after
