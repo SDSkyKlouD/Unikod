@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using SDSK.Libs.Unikod.Common;
 
 namespace SDSK.Libs.Unikod {
@@ -12,6 +13,7 @@ namespace SDSK.Libs.Unikod {
                 
                 for(int index = 0, length = textCodeArray.Length; index < length; index++) {
                     if(!(char.IsControl(textCodeArray[index]) || char.IsPunctuation(textCodeArray[index]) || char.IsWhiteSpace(textCodeArray[index]))) {
+                        bool hasFound = false;
                         string charToCheck = string.Empty;
 
                         if((index + 1) < length && char.IsSurrogatePair(textCodeArray[index], textCodeArray[index + 1])) {
@@ -22,27 +24,29 @@ namespace SDSK.Libs.Unikod {
                         }
 
                         foreach(AlphabetSet set in UnicodeSets.LatinSetList) {
-                            bool found = false;
-                            for(int setIndex = 0, setLength = set.SetData.Length; setIndex < setLength; setIndex++) {
-                                if(set.SetData[setIndex] != null && set.SetData[setIndex].Equals(charToCheck)) {
-                                    normalizedBuilder.Append(UnicodeSets.LatinSetList[set.IsUppercase ? 0 : 1].SetData[setIndex]);
-                                    found = true;
-                                    break;
-                                }
+                            int setIndex = Array.IndexOf(set.SetData, charToCheck);
+
+                            if(setIndex != -1) {
+                                normalizedBuilder.Append(UnicodeSets.LatinSetList[set.IsUppercase ? 0 : 1].SetData[setIndex]);
+                                hasFound = true;
+                                break;
                             }
-                            if(found) break;
                         }
 
                         foreach(NumberSet set in UnicodeSets.NumberSetList) {
-                            bool found = false;
-                            for(int setIndex = 0, setLength = set.SetData.Length; setIndex < setLength; setIndex++) {
-                                if(set.SetData[setIndex] != null && set.SetData[setIndex].Equals(charToCheck)) {
-                                    normalizedBuilder.Append(UnicodeSets.NumberSetList[0].SetData[setIndex]);
-                                    found = true;
-                                    break;
-                                }
+                            int setIndex = Array.IndexOf(set.SetData, charToCheck);
+
+                            if(setIndex != -1) {
+                                normalizedBuilder.Append(UnicodeSets.NumberSetList[0].SetData[setIndex]);
+                                hasFound = true;
+                                break;
                             }
-                            if(found) break;
+                        }
+
+                        if(hasFound) {
+                            continue;
+                        } else {
+                            normalizedBuilder.Append(charToCheck);
                         }
                     } else {
                         normalizedBuilder.Append(textCodeArray[index]);
