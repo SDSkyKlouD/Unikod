@@ -23,23 +23,22 @@ namespace SDSK.Libs.Unikod {
                             charToCheck = textCodeArray[index].ToString();
                         }
 
-                        foreach(AlphabetSet set in UnicodeSets.LatinSetList) {
-                            int setIndex = Array.IndexOf(set.SetData, charToCheck);
+                        foreach(IUnikodSet set in UnicodeSets.AllSetList) {
+                            if(set != null) {
+                                int setIndex = Array.IndexOf(set.SetData, charToCheck);
 
-                            if(setIndex != -1) {
-                                normalizedBuilder.Append(UnicodeSets.LatinSetList[set.IsUppercase ? 0 : 1].SetData[setIndex]);
-                                hasFound = true;
-                                break;
-                            }
-                        }
+                                if(setIndex != -1) {
+                                    if(set is AlphabetSet alphabetSet) {
+                                        normalizedBuilder.Append(UnicodeSets.LatinSetList[alphabetSet.IsUppercase ? 0 : 1].SetData[setIndex]);
+                                    } else if(set is NumberSet) {
+                                        normalizedBuilder.Append(UnicodeSets.NumberSetList[0].SetData[setIndex]);
+                                    }
 
-                        foreach(NumberSet set in UnicodeSets.NumberSetList) {
-                            int setIndex = Array.IndexOf(set.SetData, charToCheck);
-
-                            if(setIndex != -1) {
-                                normalizedBuilder.Append(UnicodeSets.NumberSetList[0].SetData[setIndex]);
-                                hasFound = true;
-                                break;
+                                    hasFound = true;
+                                    break;
+                                }
+                            } else {
+                                throw new Exception("The Unicode set is null");
                             }
                         }
 

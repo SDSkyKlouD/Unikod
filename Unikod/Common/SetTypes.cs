@@ -6,10 +6,15 @@
         All
     }
 
-    internal struct AlphabetSet {
-        internal string[] SetData { get; }
-        internal StyleType StyleType { get; }
-        internal bool IsUppercase { get; }
+    internal interface IUnikodSet {
+        string[] SetData { get; }
+        StyleType StyleType { get; }
+    }
+
+    internal class AlphabetSet : IUnikodSet {
+        public string[] SetData { get; }
+        public StyleType StyleType { get; }
+        public bool IsUppercase { get; }
 
         internal AlphabetSet(string[] data, StyleType styleType, bool uppercase) {
             SetData = data;
@@ -18,9 +23,9 @@
         }
     }
 
-    internal struct NumberSet {
-        internal string[] SetData { get; }
-        internal StyleType StyleType { get; }
+    internal class NumberSet : IUnikodSet {
+        public string[] SetData { get; }
+        public StyleType StyleType { get; }
 
         internal NumberSet(string[] data, StyleType styleType) {
             SetData = data;

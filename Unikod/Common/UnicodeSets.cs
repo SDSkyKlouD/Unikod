@@ -3,6 +3,8 @@
 namespace SDSK.Libs.Unikod.Common {
     internal static class UnicodeSets {
         #region Shared constants
+        internal static readonly List<IUnikodSet> AllSetList;
+
         internal static readonly List<AlphabetSet> LatinSetList;
         internal static readonly List<NumberSet> NumberSetList;
         #endregion
@@ -618,6 +620,10 @@ namespace SDSK.Libs.Unikod.Common {
                 _numberSansSerifBoldSet,
                 _numberMonospaceSet
             };
+
+            AllSetList = new List<IUnikodSet>();
+            AllSetList.AddRange(LatinSetList);
+            AllSetList.AddRange(NumberSetList);
         }
     }
 }
