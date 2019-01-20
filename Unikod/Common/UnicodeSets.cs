@@ -58,7 +58,7 @@ namespace SDSK.Libs.Unikod.Common {
         }, StyleType.Style, true);
         private static readonly AlphabetSet _latinItalicLowercaseSet = new AlphabetSet(new string[] {
             "𝑎", "𝑏", "𝑐", "𝑑", "𝑒",
-            "𝑓", "𝑔", null, "𝑖", "𝑗",
+            "𝑓", "𝑔", "ℎ", "𝑖", "𝑗",
             "𝑘", "𝑙", "𝑚", "𝑛", "𝑜",
             "𝑝", "𝑞", "𝑟", "𝑠", "𝑡",
             "𝑢", "𝑣", "𝑤", "𝑥", "𝑦",
@@ -85,17 +85,17 @@ namespace SDSK.Libs.Unikod.Common {
 
         /* Latin script glyphs */
         private static readonly AlphabetSet _latinScriptUppercaseSet = new AlphabetSet(new string[] {
-            "𝒜", null, "𝒞", "𝒟", null,
-            null, "𝒢", null, null, "𝒥",
+            "𝒜", "ℬ", "𝒞", "𝒟", "ℰ",
+            "ℱ", "𝒢", "ℋ", "ℐ", "𝒥",
             "𝒦", "𝒧", "𝒨", "𝒩", "𝒪",
-            "𝒫", "𝒬", null, "𝒮", "𝒯",
+            "𝒫", "𝒬", "ℛ", "𝒮", "𝒯",
             "𝒰", "𝒱", "𝒲", "𝒳", "𝒴",
             "𝒵"
         }, StyleType.Style, true);
         private static readonly AlphabetSet _latinScriptLowercaseSet = new AlphabetSet(new string[] {
-            "𝒶", "𝒷", "𝒸", "𝒹", null,
-            "𝒻", null, "𝒽", "𝒾", "𝒿",
-            "𝓀", "𝓁", "𝓂", "𝓃", null,
+            "𝒶", "𝒷", "𝒸", "𝒹", "ℯ",
+            "𝒻", "ℊ", "𝒽", "𝒾", "𝒿",
+            "𝓀", "𝓁", "𝓂", "𝓃", "ℴ",
             "𝓅", "𝓆", "𝓇", "𝓈", "𝓉",
             "𝓊", "𝓋", "𝓌", "𝓍", "𝓎",
             "𝓏"
@@ -121,12 +121,12 @@ namespace SDSK.Libs.Unikod.Common {
 
         /* Latin fraktur glyphs */
         private static readonly AlphabetSet _latinFrakturUppercaseSet = new AlphabetSet(new string[] {
-            "𝔄", "𝔅", null, "𝔇", "𝔈",
-            "𝔉", "𝔊", null, null, "𝔍",
+            "𝔄", "𝔅", "ℭ", "𝔇", "𝔈",
+            "𝔉", "𝔊", "ℌ", "ℑ", "𝔍",
             "𝔎", "𝔏", "𝔐", "𝔑", "𝔒",
-            "𝔓", "𝔔", null, "𝔖", "𝔗",
+            "𝔓", "𝔔", "ℜ", "𝔖", "𝔗",
             "𝔘", "𝔙", "𝔚", "𝔛", "𝔜",
-            null
+            "ℨ"
         }, StyleType.Style, true);
         private static readonly AlphabetSet _latinFrakturLowercaseSet = new AlphabetSet(new string[] {
             "𝔞", "𝔟", "𝔠", "𝔡", "𝔢",
@@ -283,11 +283,11 @@ namespace SDSK.Libs.Unikod.Common {
 
         /* Latin small alphabets */
         private static readonly AlphabetSet _latinSmallUppercaseSet = new AlphabetSet(new string[] {
-            "ᴀ", "ᴃ", "ᴄ", "ᴅ", "ᴇ",
-            null, null, null, null, "ᴊ",
-            "ᴋ", "ᴌ", "ᴍ", "ᴎ", "ᴏ",
-            "ᴘ", null, "ᴙ", null, "ᴛ",
-            "ᴜ", "ᴠ", "ᴡ", null, null,
+            "ᴀ", "ʙ", "ᴄ", "ᴅ", "ᴇ",
+            "ꜰ", "ɢ", "ʜ", "ɪ", "ᴊ",
+            "ᴋ", "ʟ", "ᴍ", "ɴ", "ᴏ",
+            "ᴘ", "ꞯ", "ʀ", "ꜱ", "ᴛ",
+            "ᴜ", "ᴠ", "ᴡ", null, "ʏ",
             "ᴢ"
         }, StyleType.Style, true);
 
@@ -301,19 +301,19 @@ namespace SDSK.Libs.Unikod.Common {
             null
         }, StyleType.Style, true);
         private static readonly AlphabetSet _latinModifierLowercaseSet = new AlphabetSet(new string[] {
-            "ᵅ", "ᵇ", "ᶜ", "ᵈ", "ᵉ",
-            "ᶠ", "ᵍ", null, "ᶦ", null,
-            "ᵏ", "ᶩ", "ᵐ", "ᶰ", "ᵒ",
-            "ᵖ", null, null, null, "ᵗ",
-            "ᵘ", "ᵛ", null, "ᵡ", null,
+            "ᵃ", "ᵇ", "ᶜ", "ᵈ", "ᵉ",
+            "ᶠ", "ᵍ", "ʰ", "ⁱ", "ʲ",
+            "ᵏ", "ˡ", "ᵐ", "ⁿ", "ᵒ",
+            "ᵖ", null, "ʳ", "ˢ", "ᵗ",
+            "ᵘ", "ᵛ", "ʷ", "ˣ", "ʸ",
             "ᶻ"
         }, StyleType.Style, false);
 
         /* Subscript(Lower) Latin alphabets */
         private static readonly AlphabetSet _latinSubscriptLowercaseSet = new AlphabetSet(new string[] {
-            null, null, null, null, null,
-            null, null, "ₕ", "ᵢ", null,
-            "ₖ", "ₗ", "ₘ", "ₙ", null,
+            "ₐ", null, null, null, "ₑ",
+            null, null, "ₕ", "ᵢ", "ⱼ",
+            "ₖ", "ₗ", "ₘ", "ₙ", "ₒ",
             "ₚ", null, "ᵣ", "ₛ", "ₜ",
             "ᵤ", "ᵥ", null, "ₓ", null,
             null
