@@ -321,8 +321,16 @@ namespace SDSK.Libs.Unikod.Common {
             null
         }, StyleType.Style, false);
 
-        /* Parenthesized Latin small alphabets */
-        private static readonly AlphabetSet _latinSmallParenthesizedLowercaseSet = new AlphabetSet(new string[] {
+        /* Parenthesized Latin alphabets */
+        private static readonly AlphabetSet _latinParenthesizedUppercaseSet = new AlphabetSet(new string[] {
+            "🄐", "🄑", "🄒", "🄓", "🄔",
+            "🄕", "🄖", "🄗", "🄘", "🄙",
+            "🄚", "🄛", "🄜", "🄝", "🄞",
+            "🄟", "🄠", "🄡", "🄢", "🄣",
+            "🄤", "🄥", "🄦", "🄧", "🄨",
+            "🄩"
+        }, StyleType.Style, true);
+        private static readonly AlphabetSet _latinParenthesizedLowercaseSet = new AlphabetSet(new string[] {
             "⒜", "⒝", "⒞", "⒟", "⒠",
             "⒡", "⒢", "⒣", "⒤", "⒥",
             "⒦", "⒧", "⒨", "⒩", "⒪",
@@ -496,19 +504,19 @@ namespace SDSK.Libs.Unikod.Common {
 
         /* Negative circled numbers (dingbat) */
         private static readonly NumberSet _numberDingbatNegativeCircledSet = new NumberSet(new string[] {
-            null, "❶", "❷", "❸", "❹",
+            "⓿", "❶", "❷", "❸", "❹",
             "❺", "❻", "❼", "❽", "❾"
         }, StyleType.Style);
 
         /* Circled sans-serif numbers (dingbat) */
         private static readonly NumberSet _numberDingbatSansSerifCircledSet = new NumberSet(new string[] {
-            null, "➀", "➁", "➂", "➃",
+            "🄋", "➀", "➁", "➂", "➃",
             "➄", "➅", "➆", "➇", "➈"
         }, StyleType.Style);
 
         /* Negative circled sans-serif numbers (dingbat) */
         private static readonly NumberSet _numberDingbatSansSerifNegativeCircledSet = new NumberSet(new string[] {
-            null, "➊", "➋", "➌", "➍",
+            "🄌", "➊", "➋", "➌", "➍",
             "➎", "➏", "➐", "➑", "➒"
         }, StyleType.Style);
 
@@ -584,7 +592,8 @@ namespace SDSK.Libs.Unikod.Common {
                 _latinModifierUppercaseSet,
                 _latinModifierLowercaseSet,
                 _latinSubscriptLowercaseSet,
-                _latinSmallParenthesizedLowercaseSet,
+                _latinParenthesizedUppercaseSet,
+                _latinParenthesizedLowercaseSet,
                 _latinCircledUppercaseSet,
                 _latinCircledLowercaseSet,
                 _latinOldItalicUppercaseSet,
