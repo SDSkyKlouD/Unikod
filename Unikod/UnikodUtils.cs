@@ -10,11 +10,11 @@ namespace SDSK.Libs.Unikod {
                 char[] textCodeArray = text.ToCharArray();
                 StringBuilder normalizedBuilder = new StringBuilder();
                 
-                for(int index = 0; index < textCodeArray.Length; index++) {
+                for(int index = 0, length = textCodeArray.Length; index < length; index++) {
                     if(!(char.IsControl(textCodeArray[index]) || char.IsPunctuation(textCodeArray[index]) || char.IsWhiteSpace(textCodeArray[index]))) {
                         string charToCheck = string.Empty;
 
-                        if(char.IsSurrogatePair(textCodeArray[index], textCodeArray[index + 1])) {
+                        if((index + 1) < length && char.IsSurrogatePair(textCodeArray[index], textCodeArray[index + 1])) {
                             charToCheck = textCodeArray[index].ToString() + textCodeArray[index + 1].ToString();
                             index++;
                         } else {
@@ -23,7 +23,7 @@ namespace SDSK.Libs.Unikod {
 
                         foreach(AlphabetSet set in UnicodeSets.LatinSetList) {
                             bool found = false;
-                            for(int setIndex = 0, length = set.SetData.Length; setIndex < length; setIndex++) {
+                            for(int setIndex = 0, setLength = set.SetData.Length; setIndex < setLength; setIndex++) {
                                 if(set.SetData[setIndex] != null && set.SetData[setIndex].Equals(charToCheck)) {
                                     normalizedBuilder.Append(UnicodeSets.LatinSetList[set.IsUppercase ? 0 : 1].SetData[setIndex]);
                                     found = true;
@@ -35,7 +35,7 @@ namespace SDSK.Libs.Unikod {
 
                         foreach(NumberSet set in UnicodeSets.NumberSetList) {
                             bool found = false;
-                            for(int setIndex = 0, length = set.SetData.Length; setIndex < length; setIndex++) {
+                            for(int setIndex = 0, setLength = set.SetData.Length; setIndex < setLength; setIndex++) {
                                 if(set.SetData[setIndex] != null && set.SetData[setIndex].Equals(charToCheck)) {
                                     normalizedBuilder.Append(UnicodeSets.NumberSetList[0].SetData[setIndex]);
                                     found = true;
