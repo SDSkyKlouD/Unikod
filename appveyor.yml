@@ -1,0 +1,16 @@
+version: 0.0.{build}.9999
+image: Visual Studio 2017
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
+before_build:
+- cmd: dotnet restore C:\projects\unikod\Unikod.sln
+build:
+  parallel: true
+  verbosity: normal
+deploy: off
