@@ -6,7 +6,7 @@ namespace SDSK.Libs.Unikod {
     public class UnikodUtils {
         public static string Normalize(string text) {
             if(string.IsNullOrWhiteSpace(text)) {
-                return string.Empty;
+                return null;
             } else {
                 char[] textCodeArray = text.ToCharArray();
                 StringBuilder normalizedBuilder = new StringBuilder();
