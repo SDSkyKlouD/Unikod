@@ -452,6 +452,16 @@ namespace SDSK.Libs.Unikod.Common {
             "ꓴ", "ꓦ", "ꓪ", "ꓫ", "ꓬ",
             null
         }, StyleType.Obfuscation, true);
+
+        /* Regional indicator symbol */
+        private static readonly AlphabetSet _regionalIndicatorSymbolUppercaseSet = new AlphabetSet(new string[] {
+            "🇦","🇧","🇨","🇩","🇪",
+            "🇫","🇬","🇭","🇮","🇯",
+            "🇰","🇱","🇲","🇳","🇴",
+            "🇵","🇶","🇷","🇸","🇹",
+            "🇺","🇻","🇼","🇽","🇾",
+            "🇿"
+        }, StyleType.Obfuscation, true);
         #endregion
         #endregion
 
@@ -607,7 +617,8 @@ namespace SDSK.Libs.Unikod.Common {
                 _romanGlyphsLowercaseSet,
                 _copticGlyphsUppercaseSet,
                 _tifinaghGlyphsUppercaseSet,
-                _lisuGlyphsUppercaseSet
+                _lisuGlyphsUppercaseSet,
+                _regionalIndicatorSymbolUppercaseSet
             };
             NumberSetList = new List<NumberSet>() {
                 /* Normal */

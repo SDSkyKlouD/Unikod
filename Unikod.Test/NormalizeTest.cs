@@ -1,4 +1,4 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SDSK.Libs.Unikod.Test {
     [TestClass]
@@ -8,10 +8,12 @@ namespace SDSK.Libs.Unikod.Test {
             string testText1 = "𝐘𝐨𝐮 𝐚𝐫𝐞 𝐦𝐲 𝐒𝐇𝐘 𝐁𝐎𝐘";
             string testText2 = "𝔸𝕝𝕝 𝕀 𝕎𝕒𝕟𝕥 𝔽𝕠𝕣 ℂ𝕙𝕣𝕚𝕤𝕥𝕞𝕒𝕤 𝕀𝕤 𝔾𝕆𝔻𝔻𝔸𝕄ℕ 𝕄𝕆ℕ𝔼𝕐";
             string testText3 = "ℌ𝔢𝔶 𝔟𝔯𝔬 ℑ 𝔤𝔬𝔱𝔱𝔞 𝔪𝔬𝔳𝔢 𝔬𝔫";
+            string testText4 = "🇹🇭🇪 🇶🇺🇮🇨🇰 🇧🇷🇴🇼🇳 🇫🇴🇽 🇯🇺🇲🇵🇸 🇴🇻🇪🇷 🇹🇭🇪 🇱🇦🇿🇾 🇩🇴🇬";
 
             Assert.AreEqual("You are my SHY BOY", UnikodUtils.Normalize(testText1), false);
             Assert.AreEqual("All I Want For Christmas Is GODDAMN MONEY", UnikodUtils.Normalize(testText2), false);
             Assert.AreEqual("Hey bro I gotta move on", UnikodUtils.Normalize(testText3), false);
+            Assert.AreEqual("THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG", UnikodUtils.Normalize(testText4), false);
         }
 
         [TestMethod]
