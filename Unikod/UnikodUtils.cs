@@ -4,7 +4,15 @@ using System.Text;
 using SDSK.Libs.Unikod.Common;
 
 namespace SDSK.Libs.Unikod {
+    /// <summary>
+    /// A static class with some useful utility collections other than text styling
+    /// </summary>
     public static class UnikodUtils {
+        /// <summary>
+        /// Normalize the given styled text string
+        /// </summary>
+        /// <param name="text">Styled string text to be normalized</param>
+        /// <returns>Normalized `string`. `null` if the `text` argument is null or contains only white space(s).</returns>
         public static string Normalize(string text) {
             if(string.IsNullOrWhiteSpace(text)) {
                 return null;
@@ -51,6 +59,12 @@ namespace SDSK.Libs.Unikod {
             }
         }
 
+        /// <summary>
+        /// Analyze the given styled text string
+        /// </summary>
+        /// <param name="text">Styled string text to be analyzed</param>
+        /// <returns>A `Dictionary(name|string, char count|int)`. 'name' is the name of set which contains individual character,
+        ///          and `char count` is, literally. If the `text` argument is null or contains only white space(s), this will return `null`</returns>
         public static Dictionary<string, int> Analyze(string text) {
             if(string.IsNullOrEmpty(text)) {
                 return null;
