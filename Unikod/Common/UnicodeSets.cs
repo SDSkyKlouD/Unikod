@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace SDSK.Libs.Unikod.Common {
     internal static class UnicodeSets {
@@ -644,6 +645,7 @@ namespace SDSK.Libs.Unikod.Common {
             AllSetList = new List<IUnikodSet>();
             AllSetList.AddRange(LatinSetList);
             AllSetList.AddRange(NumberSetList);
+            AllSetList = AllSetList.OrderByDescending(x => x.StyleType == StyleType.Normal).ToList();
         }
     }
 }
