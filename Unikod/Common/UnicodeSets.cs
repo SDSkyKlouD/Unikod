@@ -1,13 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace SDSK.Libs.Unikod.Common {
-    internal static class UnicodeSets {
+    public static class UnicodeSets {
         #region Shared constants
-        internal static readonly List<IUnikodSet> AllSetList;
+        public static readonly List<IUnikodSet> AllSetList;
 
-        internal static readonly List<AlphabetSet> LatinSetList;
-        internal static readonly List<NumberSet> NumberSetList;
+        public static readonly List<AlphabetSet> LatinSetList;
+        public static readonly List<NumberSet> NumberSetList;
         #endregion
 
         #region Alphabets
@@ -563,6 +564,7 @@ namespace SDSK.Libs.Unikod.Common {
         #endregion
         #endregion
 
+        #region Static constructor
         static UnicodeSets() {
             /* Set lists : normal sets should come first */
             LatinSetList = new List<AlphabetSet>() {
@@ -647,5 +649,16 @@ namespace SDSK.Libs.Unikod.Common {
             AllSetList.AddRange(NumberSetList);
             AllSetList = AllSetList.OrderByDescending(x => x.StyleType == StyleType.Normal).ToList();
         }
+        #endregion
+
+        #region Functions
+        public static IUnikodSet GetSetByName(string name) {
+            try {
+                return AllSetList.First(x => x.SetName.Equals(name));
+            } catch(InvalidOperationException) {
+                return null;        // No matching found
+            }
+        }
+        #endregion
     }
 }
