@@ -44,7 +44,7 @@ namespace SDSK.Libs.Unikod {
                                 break;
                             }
                         } else {
-                            throw new Exception("The Unicode set is null");
+                            continue;
                         }
                     }
 
@@ -92,7 +92,7 @@ namespace SDSK.Libs.Unikod {
                                 break;
                             }
                         } else {
-                            throw new Exception("The Unicode set is null");
+                            continue;
                         }
                     }
                 }
