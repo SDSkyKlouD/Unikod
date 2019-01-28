@@ -654,7 +654,7 @@ namespace SDSK.Libs.Unikod.Common {
         #region Functions
         public static IUnikodSet GetSetByName(string name) {
             try {
-                return AllSetList.First(x => x.SetName.Equals(name));
+                return AllSetList.First(x => x.SetName.Equals(name, StringComparison.OrdinalIgnoreCase));
             } catch(InvalidOperationException) {
                 return null;        // No matching found
             }
