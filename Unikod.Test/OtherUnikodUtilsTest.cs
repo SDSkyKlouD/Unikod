@@ -18,6 +18,10 @@ namespace SDSK.Libs.Unikod.Test {
             Assert.AreEqual(test1.SetName, "Latin Normal Uppercase");
             Assert.AreEqual(test2.SetName, "Number Bold");
             Assert.ThrowsException<NullReferenceException>(() => test3.SetName.Equals("Unused Set Name"));
+
+            CollectionAssert.Contains(test1.SetData, "M");
+            CollectionAssert.Contains(test2.SetData, "𝟐");
+            Assert.ThrowsException<NullReferenceException>(() => test3.SetData.Length > 1);
         }
     }
 }
