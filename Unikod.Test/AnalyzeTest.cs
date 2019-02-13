@@ -10,15 +10,15 @@ namespace SDSK.Libs.Unikod.Test {
             string testText2 = "ℑ𝔫𝔱𝔢𝔯𝔫𝔞𝔱𝔦𝔬𝔫𝔞𝔩 𝔏𝔬𝔳𝔢";
             string testText3 = "Ⓦⓞⓡⓛⓓ ⓘⓢ ⓡⓞⓤⓝⓓ";
 
-            CollectionAssert.AreEqual(new Dictionary<string, int>() {
+            CollectionAssert.AreEquivalent(new Dictionary<string, int>() {
                 { "Latin Bold Uppercase", 1 },
                 { "Latin Bold Lowercase", 12 }
             }, UnikodUtils.Analyze(testText1));
-            CollectionAssert.AreEqual(new Dictionary<string, int>() {
+            CollectionAssert.AreEquivalent(new Dictionary<string, int>() {
                 { "Latin Fraktur Uppercase", 2 },
                 { "Latin Fraktur Lowercase", 15 }
             }, UnikodUtils.Analyze(testText2));
-            CollectionAssert.AreEqual(new Dictionary<string, int>() {
+            CollectionAssert.AreEquivalent(new Dictionary<string, int>() {
                 { "Latin Circled Uppercase", 1 },
                 { "Latin Circled Lowercase", 11 }
             }, UnikodUtils.Analyze(testText3));
@@ -37,7 +37,7 @@ namespace SDSK.Libs.Unikod.Test {
                 "𝖉𝖗𝖎𝖓𝖐𝖎𝖓𝖌 𝖗𝖚𝖒 𝖆𝖓𝖉 𝖈𝖔𝖑𝖆" +
                 "𝒰𝓃𝒹ℯ𝓇𝓃ℯ𝒶𝓉𝒽 𝓉𝒽ℯ 𝓇𝒾𝓈𝒾𝓃ℊ 𝓈𝓊𝓃";        // Some part of Zedd - Stay
 
-            CollectionAssert.AreEqual(new Dictionary<string, int>() {
+            CollectionAssert.AreEquivalent(new Dictionary<string, int>() {
                 { "Latin Italic Uppercase", 1 },
                 { "Latin Italic Lowercase", 6 + 3 + 3 + 4 + 2 + 4 + 3 + 2 },
                 { "Latin Bold Italic Uppercase", 1 },
