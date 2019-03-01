@@ -17,7 +17,7 @@ namespace SDSK.Libs.Unikod.Test {
         }
 
         [TestMethod]
-        public void NormalizeText_OneStylePerText_MixWithSpecialCharacters() {
+        public void NormalizeTest_OneStylePerText_MixWithSpecialCharacters() {
             string testText1 = "𝐔𝐧𝐝𝐞𝐫 𝐭𝐡𝐞 𝐭𝐫𝐞𝐞 𝐰𝐡𝐞𝐫𝐞 𝐭𝐡𝐞 𝐠𝐫𝐚𝐬𝐬 𝐝𝐨𝐧'𝐭 𝐠𝐫𝐨𝐰 @@@@##$%!*";
             string testText2 = "𝑊𝑎𝑡𝑎𝑠ℎ𝑖, 𝐾𝑖 𝑛𝑖 𝑁𝑎𝑟𝑖𝑚𝑎𝑠𝑢! -/**\\|\\()";
             string testText3 = "𝒮𝒸ℴℴ𝓉ℯ𝓇 𝒷𝓇ℴ𝓉𝒽ℯ𝓇𝓈! 𝒮𝒞𝒪𝒪𝒯ℰℛ ℬℛ𝒪𝒯ℋℰℛ𝒮!!! ##^&**%!(**)";
@@ -28,7 +28,7 @@ namespace SDSK.Libs.Unikod.Test {
         }
 
         [TestMethod]
-        public void NormalizeText_MultiStylesPerText() {
+        public void NormalizeTest_MultiStylesPerText() {
             string testText1 = "Ⓗⓔⓐⓡⓣⓐⓒⓗⓔ, 𝗁𝖾𝖺𝗋𝗍𝖻𝗋𝖾𝖺𝗄, ᵃˡˡ ᵒᵛᵉʳ ᵗᵒʷⁿ";
             string testText2 = "𝗯𝘂𝘁 𝘀𝗼𝗺𝗲𝘁𝗵𝗶𝗻𝗴 𝘧𝘭𝘪𝘱𝘱𝘦𝘥 𝘭𝘪𝘬𝘦 𝚊 𝚜𝚠𝚒𝚝𝚌𝚑";
             string testText3 = "𝙬𝙝𝙚𝙣 𝙮𝙤𝙪 came ａｒ𝖔𝖚𝓷𝓭";
@@ -39,7 +39,7 @@ namespace SDSK.Libs.Unikod.Test {
         }
         
         [TestMethod]
-        public void NormalizeText_NumberOnly_OneStylePerText() {
+        public void NormalizeTest_NumberOnly_OneStylePerText() {
             string testText1 = "𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗𝟎";
             string testText2 = "③⑥②③①⑥④⑧⑨④⑥⑤①⑤③①③②①①⑥①⑥⑤⓪①⑥⑧④⑥④⑧⑨⑨⑤⑦⑨⑧⑤②③⓪";
             string testText3 = "❾❾❽❾❺❻❶❻❺❶❺❷⓿⓿❶❹❻❹❽❼❹❽❾❾❺❻❷❸⓿❶❺❹❻❹❽❾";
@@ -50,7 +50,7 @@ namespace SDSK.Libs.Unikod.Test {
         }
 
         [TestMethod]
-        public void NormalizeText_NumberOnly_MultiStylesPerText() {
+        public void NormalizeTest_NumberOnly_MultiStylesPerText() {
             string testText1 = "𝟣𝟤𝟥𝟰𝟱𝟲𝟟𝟠𝟡𝟘";
             string testText2 = "𝟼𝟼𝟺𝟼𝟻𝟾𝟸𝟹𝟹𝟺𝟻𝟾𝟼𝟿𝟽𝟻⑼⑼⑷⑵⑴₃₅₇₈₉₉₅⑻⑸⑵⑵⑴⑷⑵⑸";
             string testText3 = "０１１２０２３５４４５６𝟫𝟨𝟦𝟪𝟩𝟧𝟤𝟣𝟢𝟠𝟞𝟡𝟟𝟝𝟙𝟚𝟜𝟠𝟞𝟛𝟚𝟛𝟝";
@@ -61,7 +61,7 @@ namespace SDSK.Libs.Unikod.Test {
         }
 
         [TestMethod]
-        public void NormalizeText_MixAllTogether() {
+        public void NormalizeTest_MixAllTogether() {
             string testText1 = "𝖶𝖾 𝖺𝗋𝖾 𝗒𝗈𝗎𝗇𝗀. 𝖾𝗏𝖾𝗇 𝗂𝖿 𝗒𝗈𝗎 𝖺𝗋𝖾 𝟣𝟢𝗌, 𝟤𝟢𝗌, 𝟧𝟢𝗌, 𝖺𝗇𝖽 𝟣𝟢𝟢𝗌!";
             string testText2 = "𝚃𝚑𝚎 𝙧𝙖𝙙𝙞𝙪𝙨 𝙤𝙛 𝙩𝙝𝙚 𝙀𝙖𝙧𝙩𝙝 𝚒𝚜 𝚊𝚋𝚘𝚞𝚝 𝟼,𝟹𝟽𝟷𝚔𝚖.";
             string testText3 = "🄘⒯ ⒲⒤⒧⒧ ⒯⒜⒦⒠ ⒜⒝⒪⒰⒯ 𝟞𝟜 𝕙𝕠𝕦𝕣𝕤 ⒝⒴ ⒜ ⒞⒜⒭ ⒜⒯ ①⓪⓪ⓚⓜ/ⓗ.";
