@@ -6,22 +6,25 @@ namespace SDSK.Libs.Unikod.Test {
     public class AnalyzeTest {
         [TestMethod]
         public void AnalyzeTest_OneStylePerText() {
-            string testText1 = "𝐀𝐛𝐬𝐨𝐥𝐮𝐭𝐞𝐥𝐲, 𝐬𝐢𝐫.";
-            string testText2 = "ℑ𝔫𝔱𝔢𝔯𝔫𝔞𝔱𝔦𝔬𝔫𝔞𝔩 𝔏𝔬𝔳𝔢";
-            string testText3 = "Ⓦⓞⓡⓛⓓ ⓘⓢ ⓡⓞⓤⓝⓓ";
+            string testText1 = "Something's wrong";                 // Test for normal alphabets
+            string testText2 = "ℑ𝔫𝔱𝔢𝔯𝔫𝔞𝔱𝔦𝔬𝔫𝔞𝔩 𝔏𝔬𝔳𝔢";                  // Test for stylized alphabets
+            string testText3 = "33211223215543321231";              // Test for normal numbers
+            string testText4 = "𝟑𝟓𝟑𝟓𝟑𝟓𝟔𝟔𝟒𝟓𝟒𝟑𝟐";                  // Test for stylized numbers
 
             CollectionAssert.AreEquivalent(new Dictionary<string, int>() {
-                { "Latin Bold Uppercase", 1 },
-                { "Latin Bold Lowercase", 12 }
+                { "Latin Normal Uppercase", 1 },
+                { "Latin Normal Lowercase", 14 }
             }, UnikodUtils.Analyze(testText1));
             CollectionAssert.AreEquivalent(new Dictionary<string, int>() {
                 { "Latin Fraktur Uppercase", 2 },
                 { "Latin Fraktur Lowercase", 15 }
             }, UnikodUtils.Analyze(testText2));
             CollectionAssert.AreEquivalent(new Dictionary<string, int>() {
-                { "Latin Circled Uppercase", 1 },
-                { "Latin Circled Lowercase", 11 }
+                { "Number Normal", 20 }
             }, UnikodUtils.Analyze(testText3));
+            CollectionAssert.AreEquivalent(new Dictionary<string, int>() {
+                { "Number Bold", 13 }
+            }, UnikodUtils.Analyze(testText4));
         }
 
         [TestMethod]
