@@ -655,8 +655,9 @@ namespace SDSK.Libs.Unikod.Common {
         public static IUnikodSet GetSetByName(string name) {
             try {
                 return AllSetList.First(x => x.SetName.Equals(name, StringComparison.OrdinalIgnoreCase));
-            } catch(InvalidOperationException) {
-                return null;        // No matching found
+            } catch(Exception exception)
+              when (exception is InvalidOperationException || exception is ArgumentNullException) {
+                return null;        // No matching found or the argument is null
             }
         }
         #endregion
