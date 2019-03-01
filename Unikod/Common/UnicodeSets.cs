@@ -6,7 +6,6 @@ namespace SDSK.Libs.Unikod.Common {
     public static class UnicodeSets {
         #region Shared constants
         public static readonly List<IUnikodSet> SetListAll;
-
         public static readonly List<AlphabetSet> SetListLatin;
         public static readonly List<NumberSet> SetListNumber;
         #endregion
@@ -660,6 +659,9 @@ namespace SDSK.Libs.Unikod.Common {
                 return null;        // No matching found or the argument is null
             }
         }
+
+        public static List<IUnikodSet> GetSetsByStyleType(StyleType type)
+            => SetListAll.Where(x => x.StyleType == type).ToList();
         #endregion
     }
 }
