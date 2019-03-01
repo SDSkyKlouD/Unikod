@@ -39,14 +39,7 @@ namespace SDSK.Libs.Unikod.Test {
 
             Assert.AreEqual(test1.SetName, "Number Double Circled");
             Assert.AreEqual(test2.SetName, "Latin Fullwidth Uppercase");
-            CollectionAssert.AreEqual(new string[] {
-                "ꓮ", "ꓐ", "ꓚ", "ꓓ", "ꓰ",
-                "ꓝ", "ꓖ", "ꓧ", "ꓲ", "ꓙ",
-                "ꓗ", "ꓡ", "ꓟ", "ꓠ", "ꓳ",
-                "ꓑ", null, "ꓣ", "ꓢ", "ꓔ",
-                "ꓴ", "ꓦ", "ꓪ", "ꓫ", "ꓬ",
-                null
-            }, test3.SetData);
+            CollectionAssert.AreEqual(UnicodeSets.LisuGlyphsUppercaseSet.SetData, test3.SetData);
         }
 
         [TestMethod]
