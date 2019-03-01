@@ -29,15 +29,15 @@ namespace SDSK.Libs.Unikod {
 
                     bool hasFound = false;
 
-                    foreach(IUnikodSet set in UnicodeSets.AllSetList) {
+                    foreach(IUnikodSet set in UnicodeSets.SetListAll) {
                         if(set != null) {
                             int setIndex = Array.IndexOf(set.SetData, charToCheck);
 
                             if(setIndex != -1) {
                                 if(set is AlphabetSet alphabetSet) {
-                                    normalizedBuilder.Append(UnicodeSets.LatinSetList[alphabetSet.IsUppercase ? 0 : 1].SetData[setIndex]);
+                                    normalizedBuilder.Append(UnicodeSets.SetListLatin[alphabetSet.IsUppercase ? 0 : 1].SetData[setIndex]);
                                 } else if(set is NumberSet) {
-                                    normalizedBuilder.Append(UnicodeSets.NumberSetList[0].SetData[setIndex]);
+                                    normalizedBuilder.Append(UnicodeSets.SetListNumber[0].SetData[setIndex]);
                                 }
 
                                 hasFound = true;
@@ -78,7 +78,7 @@ namespace SDSK.Libs.Unikod {
                         }
                     }
 
-                    foreach(IUnikodSet set in UnicodeSets.AllSetList) {
+                    foreach(IUnikodSet set in UnicodeSets.SetListAll) {
                         if(set != null) {
                             int setIndex = Array.IndexOf(set.SetData, charToCheck);
 
