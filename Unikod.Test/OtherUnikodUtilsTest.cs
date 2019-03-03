@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SDSK.Libs.Unikod.Common;
 
@@ -55,6 +56,17 @@ namespace SDSK.Libs.Unikod.Test {
             Assert.ThrowsException<NullReferenceException>(() => test1.SetData.Length);
             Assert.ThrowsException<NullReferenceException>(() => test2.SetName.Length);
             Assert.ThrowsException<NullReferenceException>(() => test3.StyleType.ToString());
+        }
+
+        [TestMethod]
+        public void GetSetsByStyleTypeTest_Normal() {
+            List<IUnikodSet> testList = UnicodeSets.GetSetsByStyleType(StyleType.Normal);
+
+            CollectionAssert.AreEquivalent(new List<IUnikodSet>() {
+                UnicodeSets.LatinNormalUppercaseSet,
+                UnicodeSets.LatinNormalLowercaseSet,
+                UnicodeSets.NumberNormalSet
+            }, testList);
         }
     }
 }

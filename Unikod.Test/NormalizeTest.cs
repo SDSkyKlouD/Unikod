@@ -69,7 +69,6 @@ namespace SDSK.Libs.Unikod.Test {
             Assert.AreEqual("We are young. even if you are 10s, 20s, 50s, and 100s!", UnikodUtils.Normalize(testText1), false);
             Assert.AreEqual("The radius of the Earth is about 6,371km.", UnikodUtils.Normalize(testText2), false);
             Assert.AreEqual("It will take about 64 hours by a car at 100km/h.", UnikodUtils.Normalize(testText3), false);
-
         }
     }
 }
