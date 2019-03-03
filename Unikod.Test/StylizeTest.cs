@@ -30,5 +30,42 @@ namespace SDSK.Libs.Unikod.Test {
             Assert.AreEqual("ᵂⁱᵗʰᵒᵘᵗ 𝚈ᵒᵘ", Styler.Stylize(textToBeStylized1, UnicodeSets.LatinModifierUppercaseSet, UnicodeSets.LatinModifierLowercaseSet, UnicodeSets.LatinMonospaceUppercaseSet, UnicodeSets.LatinMonospaceLowercaseSet));
             Assert.AreEqual("🄢ₑₑ 🄨ₒᵤ 🄐⒢ₐᵢₙ", Styler.Stylize(textToBeStylized2, UnicodeSets.LatinSubscriptLowercaseSet, UnicodeSets.LatinParenthesizedUppercaseSet, UnicodeSets.LatinParenthesizedLowercaseSet));
         }
+
+        [TestMethod]
+        public void StylizeTest_Number_OneStyle() {
+            string textToBeStylized1 = "00039039000";
+            string textToBeStylized2 = "95423165877";
+
+            Assert.AreEqual("０００３９０３９０００", Styler.Stylize(textToBeStylized1, UnicodeSets.NumberFullWidthSet));
+            Assert.AreEqual("𝟵𝟱𝟰𝟮𝟯𝟭𝟲𝟱𝟴𝟳𝟳", Styler.Stylize(textToBeStylized2, UnicodeSets.NumberSansSerifBoldSet));
+        }
+
+        [TestMethod]
+        public void StylizeTest_Number_IncompletedOneStyle() {
+            string textToBeStylized = "01234567890";
+
+            Assert.AreEqual("0⑴⑵⑶⑷⑸⑹⑺⑻⑼0", Styler.Stylize(textToBeStylized, UnicodeSets.NumberParenthesizedSet));
+        }
+
+        [TestMethod]
+        public void StylizeTest_Number_WithFallbackStyle() {
+            string textToBeStylized = "01234567890";
+
+            Assert.AreEqual("⓿⓵⓶⓷⓸⓹⓺⓻⓼⓽⓿", Styler.Stylize(textToBeStylized, UnicodeSets.NumberDoubleCircledSet, UnicodeSets.NumberDingbatNegativeCircledSet));
+        }
+
+        [TestMethod]
+        public void StylizeTest_LatinNumberMixed_OneStyle() {
+            string textToBeStylized = "Commits 0 Modified 2 Unikod master";
+
+            Assert.AreEqual("ℂ𝕠𝕞𝕞𝕚𝕥𝕤 𝟘 𝕄𝕠𝕕𝕚𝕗𝕚𝕖𝕕 𝟚 𝕌𝕟𝕚𝕜𝕠𝕕 𝕞𝕒𝕤𝕥𝕖𝕣", Styler.Stylize(textToBeStylized, UnicodeSets.LatinDoubleStruckUppercaseSet, UnicodeSets.LatinDoubleStruckLowercaseSet, UnicodeSets.NumberDoubleStruckSet));
+        }
+
+        [TestMethod]
+        public void StylizeTest_LatinNumberMixed_WithFallbackStyle() {
+            string textToBeStylized = "Curiosity was launched from Cape Canaveral on November 26, 2011, at 15:02 UTC";
+
+            Assert.AreEqual("𝐶ᵘʳⁱᵒˢⁱᵗʸ ʷᵃˢ ˡᵃᵘⁿᶜʰᵉᵈ ᶠʳᵒᵐ 𝐶ᵃᵖᵉ 𝐶ᵃⁿᵃᵛᵉʳᵃˡ ᵒⁿ ᴺᵒᵛᵉᵐᵇᵉʳ ⑵⑹, ⑵🄌⑴⑴, ᵃᵗ ⑴⑸:🄌⑵ ᵁᵀ𝐶", Styler.Stylize(textToBeStylized, UnicodeSets.LatinModifierUppercaseSet, UnicodeSets.LatinModifierLowercaseSet, UnicodeSets.NumberParenthesizedSet, UnicodeSets.LatinItalicUppercaseSet, UnicodeSets.LatinItalicLowercaseSet, UnicodeSets.NumberDingbatSansSerifNegativeCircledSet));
+        }
     }
 }
