@@ -70,5 +70,18 @@ namespace SDSK.Libs.Unikod.Test {
             Assert.AreEqual("The radius of the Earth is about 6,371km.", Styler.Unstylize(testText2), false);
             Assert.AreEqual("It will take about 64 hours by a car at 100km/h.", Styler.Unstylize(testText3), false);
         }
+
+        [TestMethod]
+        public void NormalizeTest_ContainingCJKChars() {
+            string testText1 = "이젠 𝐒𝐞𝐚로 떠날거에요";
+            string testText2 = "거미로 𝚆𝚎𝚋 쳐서 🄕⒤⒮⒣ 잡으러";
+            string testText3 = "そう ℍ𝕒𝕟𝕕 𝕚𝕟 ℍ𝕒𝕟𝕕 君のその手は";
+            string testText4 = "知らない誰かのℋ𝒶𝓃𝒹を";
+
+            Assert.AreEqual("이젠 Sea로 떠날거에요", Styler.Unstylize(testText1), false);
+            Assert.AreEqual("거미로 Web 쳐서 Fish 잡으러", Styler.Unstylize(testText2), false);
+            Assert.AreEqual("そう Hand in Hand 君のその手は", Styler.Unstylize(testText3), false);
+            Assert.AreEqual("知らない誰かのHandを", Styler.Unstylize(testText4), false);
+        }
     }
 }
