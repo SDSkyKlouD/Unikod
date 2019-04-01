@@ -4,7 +4,16 @@ using SDSK.Libs.Unikod.Common;
 using SDSK.Libs.Unikod.Common.Types;
 
 namespace SDSK.Libs.Unikod {
+    /// <summary>
+    /// A static class with some functions about text stylization
+    /// </summary>
     public static class Styler {
+        /// <summary>
+        /// Stylize the given styled text string
+        /// </summary>
+        /// <param name="text">A string text to be stylized</param>
+        /// <param name="set">A/Some style set(s) </param>
+        /// <returns>Stylized text as `string`</returns>
         public static string Stylize(string text, params IUnikodSet[] set) {
             if(string.IsNullOrEmpty(text)) {
                 return null;
@@ -72,7 +81,7 @@ namespace SDSK.Libs.Unikod {
         /// <summary>
         /// Unstylize the given styled text string
         /// </summary>
-        /// <param name="text">Styled string text to be normalized</param>
+        /// <param name="text">Styled string text to be unstylized</param>
         /// <returns>Unstylized `string`. `null` if the `text` argument is null or contains only white space(s).</returns>
         public static string Unstylize(string text) {
             if(string.IsNullOrWhiteSpace(text)) {
