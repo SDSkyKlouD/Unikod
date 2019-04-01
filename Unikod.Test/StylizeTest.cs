@@ -72,11 +72,11 @@ namespace SDSK.Libs.Unikod.Test {
         public void StylizeTest_ContainingCJKChars() {
             string textToBeStylized1 = "독도(Dokdo, 獨島)는 동경 131도 51~52분/북위 37도 14분에 위치한 대한민국(Republic of Korea, 大韓民國)의 섬이자 명백한 영토이며, 이는 지리적・역사적으로 입증된 사실이다.";
             string textToBeStylized2 = "일본(Japan, 日本) 측은 자국의 영토라 주장하고 있으며 '다케시마(Takeshima, 竹島, たけしま)'라고 부르고 있다.";
-            string textToBeStylized3 = "대한민국이 일본 측의 영토 주장에 대해 함구하고 있는 이유는 명백한 사실이 있기에 일본 측의 터무니없는 주장에 반박할 가치가 없기 때문이다.";
+            string textToBeStylized3 = "대한민국이 일본 측의 영토 주장에 대해 입을 열지 않고 있는 이유는, 명백한 사실이 있기에 일본 측의 터무니없는 주장에 반박할 가치가 없기 때문이다.";
 
             Assert.AreEqual("독도(𝐃𝐨𝐤𝐝𝐨, 獨島)는 동경 𝟏𝟑𝟏도 𝟓𝟏~𝟓𝟐분/북위 𝟑𝟕도 𝟏𝟒분에 위치한 대한민국(𝐑𝐞𝐩𝐮𝐛𝐥𝐢𝐜 𝐨𝐟 𝐊𝐨𝐫𝐞𝐚, 大韓民國)의 섬이자 명백한 영토이며, 이는 지리적・역사적으로 입증된 사실이다.", Styler.Stylize(textToBeStylized1, UnicodeSets.LatinBoldUppercaseSet, UnicodeSets.LatinBoldLowercaseSet, UnicodeSets.NumberBoldSet));
             Assert.AreEqual("일본(𝐽𝑎𝑝𝑎𝑛, 日本) 측은 자국의 영토라 주장하고 있으며 '다케시마(𝑇𝑎𝑘𝑒𝑠ℎ𝑖𝑚𝑎, 竹島, たけしま)'라고 부르고 있다.", Styler.Stylize(textToBeStylized2, UnicodeSets.LatinItalicUppercaseSet, UnicodeSets.LatinItalicLowercaseSet));
-            Assert.AreEqual("대한민국이 일본 측의 영토 주장에 대해 함구하고 있는 이유는 명백한 사실이 있기에 일본 측의 터무니없는 주장에 반박할 가치가 없기 때문이다.", Styler.Stylize(textToBeStylized3, UnicodeSets.LatinDoubleStruckUppercaseSet, UnicodeSets.LatinDoubleStruckLowercaseSet));
+            Assert.AreEqual("대한민국이 일본 측의 영토 주장에 대해 입을 열지 않고 있는 이유는, 명백한 사실이 있기에 일본 측의 터무니없는 주장에 반박할 가치가 없기 때문이다.", Styler.Stylize(textToBeStylized3, UnicodeSets.LatinDoubleStruckUppercaseSet, UnicodeSets.LatinDoubleStruckLowercaseSet));
         }
     }
 }

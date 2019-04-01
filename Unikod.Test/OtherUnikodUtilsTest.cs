@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SDSK.Libs.Unikod.Common;
+using SDSK.Libs.Unikod.Common.Types;
 
 namespace SDSK.Libs.Unikod.Test {
     [TestClass]

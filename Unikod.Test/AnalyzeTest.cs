@@ -14,17 +14,17 @@ namespace SDSK.Libs.Unikod.Test {
             CollectionAssert.AreEquivalent(new Dictionary<string, int>() {
                 { "Latin Normal Uppercase", 1 },
                 { "Latin Normal Lowercase", 14 }
-            }, UnikodUtils.Analyze(testText1));
+            }, Utils.Analyze(testText1));
             CollectionAssert.AreEquivalent(new Dictionary<string, int>() {
                 { "Latin Fraktur Uppercase", 2 },
                 { "Latin Fraktur Lowercase", 15 }
-            }, UnikodUtils.Analyze(testText2));
+            }, Utils.Analyze(testText2));
             CollectionAssert.AreEquivalent(new Dictionary<string, int>() {
                 { "Number Normal", 20 }
-            }, UnikodUtils.Analyze(testText3));
+            }, Utils.Analyze(testText3));
             CollectionAssert.AreEquivalent(new Dictionary<string, int>() {
                 { "Number Bold", 13 }
-            }, UnikodUtils.Analyze(testText4));
+            }, Utils.Analyze(testText4));
         }
 
         [TestMethod]
@@ -59,7 +59,7 @@ namespace SDSK.Libs.Unikod.Test {
                 { "Latin Fraktur Bold Lowercase", 8 + 3 + 3 + 4 },
                 { "Latin Script Uppercase", 1 },
                 { "Latin Script Lowercase", 9 + 3 + 6 + 3 }
-            }, UnikodUtils.Analyze(testText));
+            }, Utils.Analyze(testText));
         }
     }
 }

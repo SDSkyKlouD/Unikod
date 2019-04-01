@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using SDSK.Libs.Unikod.Common.Types;
 
 namespace SDSK.Libs.Unikod.Common {
     public static class UnicodeSets {

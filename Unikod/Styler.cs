@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using SDSK.Libs.Unikod.Common;
+using SDSK.Libs.Unikod.Common.Types;
 
 namespace SDSK.Libs.Unikod {
     public static class Styler {
@@ -65,6 +66,57 @@ namespace SDSK.Libs.Unikod {
                 }
 
                 return builder.ToString();
+            }
+        }
+
+        /// <summary>
+        /// Unstylize the given styled text string
+        /// </summary>
+        /// <param name="text">Styled string text to be normalized</param>
+        /// <returns>Unstylized `string`. `null` if the `text` argument is null or contains only white space(s).</returns>
+        public static string Unstylize(string text) {
+            if(string.IsNullOrWhiteSpace(text)) {
+                return null;
+            } else {
+                StringBuilder normalizedBuilder = new StringBuilder();
+
+                foreach(string charToCheck in text.ToUnicodeStringArray()) {
+                    if(char.TryParse(charToCheck, out char singleCharacter)) {
+                        if(char.IsControl(singleCharacter) || char.IsWhiteSpace(singleCharacter)) {
+                            normalizedBuilder.Append(charToCheck);
+                            continue;
+                        }
+                    }
+
+                    bool hasFound = false;
+
+                    foreach(IUnikodSet set in UnicodeSets.SetListAll) {
+                        if(set != null) {
+                            int setIndex = Array.IndexOf(set.SetData, charToCheck);
+
+                            if(setIndex != -1) {
+                                if(set is AlphabetSet alphabetSet) {
+                                    normalizedBuilder.Append(UnicodeSets.SetListLatin[alphabetSet.IsUppercase ? 0 : 1].SetData[setIndex]);
+                                } else if(set is NumberSet) {
+                                    normalizedBuilder.Append(UnicodeSets.SetListNumber[0].SetData[setIndex]);
+                                }
+
+                                hasFound = true;
+                                break;
+                            }
+                        } else {
+                            continue;
+                        }
+                    }
+
+                    if(hasFound) {
+                        continue;
+                    } else {
+                        normalizedBuilder.Append(charToCheck);
+                    }
+                }
+
+                return normalizedBuilder.ToString();
             }
         }
     }

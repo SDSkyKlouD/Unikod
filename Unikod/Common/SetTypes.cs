@@ -5,7 +5,9 @@
         Obfuscation,
         All
     }
+}
 
+namespace SDSK.Libs.Unikod.Common.Types {
     public interface IUnikodSet {
         string SetName { get; }
         string[] SetData { get; }
