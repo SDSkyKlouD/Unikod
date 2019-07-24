@@ -5,6 +5,15 @@ namespace SDSK.Libs.Unikod.Test {
     [TestClass]
     public class StylizeTest {
         [TestMethod]
+        public void StylizeTest_Specials() {
+            string textNull = null;
+            string textEmpty = "";
+
+            Assert.IsNull(Styler.Stylize(textNull, UnicodeSets.LatinBoldUppercaseSet));
+            Assert.AreEqual(textEmpty, Styler.Stylize(textEmpty, UnicodeSets.LatinItalicUppercaseSet));
+        }
+
+        [TestMethod]
         public void StylizeTest_Latin_OneStyle() {
             string textToBeStylized1 = "Style me!";
             string textToBeStylized2 = "/*- Holy sxxt I gotta go -*/";
