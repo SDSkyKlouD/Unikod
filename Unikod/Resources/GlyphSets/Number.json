@@ -1,0 +1,109 @@
+﻿{
+    "normal": {
+        "name": "Number Normal",
+        "characters": [
+            "0", "1", "2", "3", "4",
+            "5", "6", "7", "8", "9"
+        ]
+    },
+    "style": [
+        {
+            "name": "Number Bold",
+            "characters": [
+                "𝟎", "𝟏", "𝟐", "𝟑", "𝟒",
+                "𝟓", "𝟔", "𝟕", "𝟖", "𝟗"
+            ]
+        },
+        {
+            "name": "Number Fullwidth",
+            "characters": [
+                "０", "１", "２", "３", "４",
+                "５", "６", "７", "８", "９"
+            ]
+        },
+        {
+            "name": "Number Superscript",
+            "characters": [
+                "⁰", "¹", "²", "³", "⁴",
+                "⁵", "⁶", "⁷", "⁸", "⁹"
+            ]
+        },
+        {
+            "name": "Number Subscript",
+            "characters": [
+                "₀", "₁", "₂", "₃", "₄",
+                "₅", "₆", "₇", "₈", "₉"
+            ]
+        },
+        {
+            "name": "Number Circled",
+            "characters": [
+                "⓪", "①", "②", "③", "④",
+                "⑤", "⑥", "⑦", "⑧", "⑨"
+            ]
+        },
+        {
+            "name": "Number Parenthesized",
+            "characters": [
+                null, "⑴", "⑵", "⑶", "⑷",
+                "⑸", "⑹", "⑺", "⑻", "⑼"
+            ]
+        },
+        {
+            "name": "Number Double Circled",
+            "characters": [
+                null, "⓵", "⓶", "⓷", "⓸",
+                "⓹", "⓺", "⓻", "⓼", "⓽"
+            ]
+        },
+        {
+            "name": "Number Circled (Dingbat Negative)",
+            "characters": [
+                "⓿", "❶", "❷", "❸", "❹",
+                "❺", "❻", "❼", "❽", "❾"
+            ]
+        },
+        {
+            "name": "Number Circled (Dingbat Sans Serif)",
+            "characters": [
+                "🄋", "➀", "➁", "➂", "➃",
+                "➄", "➅", "➆", "➇", "➈"
+            ]
+        },
+        {
+            "name": "Number Circled (Dingbat Sans Serif Negative)",
+            "characters": [
+                "🄌", "➊", "➋", "➌", "➍",
+                "➎", "➏", "➐", "➑", "➒"
+            ]
+        },
+        {
+            "name": "Number Double Struck",
+            "characters": [
+                "𝟘", "𝟙", "𝟚", "𝟛", "𝟜",
+                "𝟝", "𝟞", "𝟟", "𝟠", "𝟡"
+            ]
+        },
+        {
+            "name": "Number Sans Serif",
+            "characters": [
+                "𝟢", "𝟣", "𝟤", "𝟥", "𝟦",
+                "𝟧", "𝟨", "𝟩", "𝟪", "𝟫"
+            ]
+        },
+        {
+            "name": "Number Sans Serif Bold",
+            "characters": [
+                "𝟬", "𝟭", "𝟮", "𝟯", "𝟰",
+                "𝟱", "𝟲", "𝟳", "𝟴", "𝟵"
+            ]
+        },
+        {
+            "name": "Number Monospace",
+            "characters": [
+                "𝟶", "𝟷", "𝟸", "𝟹", "𝟺",
+                "𝟻", "𝟼", "𝟽", "𝟾", "𝟿"
+            ]
+        }
+    ]
+}
