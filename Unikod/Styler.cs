@@ -15,7 +15,7 @@ namespace SDSK.Libs.Unikod {
         /// <param name="set">A/Some style set(s) </param>
         /// <returns>Stylized text as `string`</returns>
         public static string Stylize(string text, params IUnikodSet[] set) {
-            if(string.IsNullOrEmpty(text)) {
+            if(text == null) {
                 return null;
             } else {
                 StringBuilder builder = new StringBuilder();
