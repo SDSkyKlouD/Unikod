@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net46</TargetFrameworks>
     <OutputType>Library</OutputType>
@@ -17,8 +17,15 @@
     <AssemblyVersion>0.0.1.1</AssemblyVersion>
     <FileVersion>0.0.1.1</FileVersion>
     <PackageTags>unikod</PackageTags>
-    <PackageLicenseUrl>https://github.com/SDSkyKlouD/Unikod/blob/master/LICENSE</PackageLicenseUrl>
     <SignAssembly>true</SignAssembly>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseFile>README.md</PackageLicenseFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 </Project>
