@@ -1,5 +1,6 @@
 version: 0.0.{build}.9999
 image: Visual Studio 2019
+configuration: Release
 clone_depth: 1
 dotnet_csproj:
   patch: true
@@ -12,5 +13,6 @@ dotnet_csproj:
 before_build:
 - cmd: dotnet restore C:\projects\unikod\Unikod.sln
 build:
+  publish_nuget: true
   parallel: true
   verbosity: normal
