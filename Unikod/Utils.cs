@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using SDSK.Libs.Unikod.Common;
-using SDSK.Libs.Unikod.Common.Types;
+using SDSK.Libs.Unikod.Types;
 
 namespace SDSK.Libs.Unikod {
     /// <summary>
@@ -29,13 +29,13 @@ namespace SDSK.Libs.Unikod {
 
                     foreach(IUnikodSet set in UnicodeSets.SetListAll) {
                         if(set != null) {
-                            int setIndex = Array.IndexOf(set.SetData, charToCheck);
+                            int setIndex = Array.IndexOf(set.Data, charToCheck);
 
                             if(setIndex != -1) {
-                                if(analyzedPairs.ContainsKey(set.SetName)) {
-                                    analyzedPairs[set.SetName] += 1;
+                                if(analyzedPairs.ContainsKey(set.Name)) {
+                                    analyzedPairs[set.Name] += 1;
                                 } else {
-                                    analyzedPairs.Add(set.SetName, 1);
+                                    analyzedPairs.Add(set.Name, 1);
                                 }
 
                                 break;

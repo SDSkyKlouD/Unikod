@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SDSK.Libs.Unikod.Common;
-using SDSK.Libs.Unikod.Common.Types;
+using SDSK.Libs.Unikod.Types;
 
 namespace SDSK.Libs.Unikod.Test {
     [TestClass]
@@ -17,8 +17,8 @@ namespace SDSK.Libs.Unikod.Test {
             Assert.IsInstanceOfType(test2, typeof(NumberSet));
             Assert.IsInstanceOfType(test3, typeof(AlphabetSet));
 
-            Assert.AreEqual(test1.SetName, "Latin Normal Uppercase");
-            Assert.AreEqual(test2.SetName, "Number Bold");
+            Assert.AreEqual(test1.Name, "Latin Normal Uppercase");
+            Assert.AreEqual(test2.Name, "Number Bold");
             CollectionAssert.AreEqual(new string[] {
                 "ᵃ", "ᵇ", "ᶜ", "ᵈ", "ᵉ",
                 "ᶠ", "ᵍ", "ʰ", "ⁱ", "ʲ",
@@ -26,7 +26,7 @@ namespace SDSK.Libs.Unikod.Test {
                 "ᵖ", null, "ʳ", "ˢ", "ᵗ",
                 "ᵘ", "ᵛ", "ʷ", "ˣ", "ʸ",
                 "ᶻ"
-            }, test3.SetData);
+            }, test3.Data);
         }
 
         [TestMethod]
@@ -39,9 +39,9 @@ namespace SDSK.Libs.Unikod.Test {
             Assert.IsInstanceOfType(test2, typeof(AlphabetSet));
             Assert.IsInstanceOfType(test3, typeof(AlphabetSet));
 
-            Assert.AreEqual(test1.SetName, "Number Double Circled");
-            Assert.AreEqual(test2.SetName, "Latin Fullwidth Uppercase");
-            CollectionAssert.AreEqual(UnicodeSets.LisuGlyphsUppercaseSet.SetData, test3.SetData);
+            Assert.AreEqual(test1.Name, "Number Double Circled");
+            Assert.AreEqual(test2.Name, "Latin Fullwidth Uppercase");
+            CollectionAssert.AreEqual(UnicodeSets.LisuGlyphsUppercaseSet.Data, test3.Data);
         }
 
         [TestMethod]
@@ -54,8 +54,8 @@ namespace SDSK.Libs.Unikod.Test {
             Assert.IsNull(test2);
             Assert.IsNull(test3);
 
-            Assert.ThrowsException<NullReferenceException>(() => test1.SetData.Length);
-            Assert.ThrowsException<NullReferenceException>(() => test2.SetName.Length);
+            Assert.ThrowsException<NullReferenceException>(() => test1.Data.Length);
+            Assert.ThrowsException<NullReferenceException>(() => test2.Name.Length);
             Assert.ThrowsException<NullReferenceException>(() => test3.StyleType.ToString());
         }
 

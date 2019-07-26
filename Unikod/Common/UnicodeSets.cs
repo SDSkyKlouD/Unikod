@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using SDSK.Libs.Unikod.Common.Types;
+using SDSK.Libs.Unikod.Types;
 
 namespace SDSK.Libs.Unikod.Common {
     public static class UnicodeSets {
@@ -21,7 +21,7 @@ namespace SDSK.Libs.Unikod.Common {
             "P", "Q", "R", "S", "T",
             "U", "V", "W", "X", "Y",
             "Z"
-        }, StyleType.Normal, true);
+        }, StyleType.Normal, LetterCaseType.Uppercase);
         public static readonly AlphabetSet LatinNormalLowercaseSet = new AlphabetSet("Latin Normal Lowercase", new string[] {
             "a", "b", "c", "d", "e",
             "f", "g", "h", "i", "j",
@@ -29,7 +29,7 @@ namespace SDSK.Libs.Unikod.Common {
             "p", "q", "r", "s", "t",
             "u", "v", "w", "x", "y",
             "z"
-        }, StyleType.Normal, false);
+        }, StyleType.Normal, LetterCaseType.Lowercase);
         #endregion
 
         #region Style
@@ -41,7 +41,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝐏", "𝐐", "𝐑", "𝐒", "𝐓",
             "𝐔", "𝐕", "𝐖", "𝐗", "𝐘",
             "𝐙"
-        }, StyleType.Style, true);
+        }, StyleType.Style, LetterCaseType.Uppercase);
         public static readonly AlphabetSet LatinBoldLowercaseSet = new AlphabetSet("Latin Bold Lowercase", new string[] {
             "𝐚", "𝐛", "𝐜", "𝐝", "𝐞",
             "𝐟", "𝐠", "𝐡", "𝐢", "𝐣",
@@ -49,7 +49,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝐩", "𝐪", "𝐫", "𝐬", "𝐭",
             "𝐮", "𝐯", "𝐰", "𝐱", "𝐲",
             "𝐳"
-        }, StyleType.Style, false);
+        }, StyleType.Style, LetterCaseType.Lowercase);
 
         /* Latin italic glyphs */
         public static readonly AlphabetSet LatinItalicUppercaseSet = new AlphabetSet("Latin Italic Uppercase", new string[] {
@@ -59,7 +59,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝑃", "𝑄", "𝑅", "𝑆", "𝑇",
             "𝑈", "𝑉", "𝑊", "𝑋", "𝑌",
             "𝑍"
-        }, StyleType.Style, true);
+        }, StyleType.Style, LetterCaseType.Uppercase);
         public static readonly AlphabetSet LatinItalicLowercaseSet = new AlphabetSet("Latin Italic Lowercase", new string[] {
             "𝑎", "𝑏", "𝑐", "𝑑", "𝑒",
             "𝑓", "𝑔", "ℎ", "𝑖", "𝑗",
@@ -67,7 +67,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝑝", "𝑞", "𝑟", "𝑠", "𝑡",
             "𝑢", "𝑣", "𝑤", "𝑥", "𝑦",
             "𝑧"
-        }, StyleType.Style, false);
+        }, StyleType.Style, LetterCaseType.Lowercase);
 
         /* Latin bold italic glyphs */
         public static readonly AlphabetSet LatinBoldItalicUppercaseSet = new AlphabetSet("Latin Bold Italic Uppercase", new string[] {
@@ -77,7 +77,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝑷", "𝑸", "𝑹", "𝑺", "𝑻",
             "𝑼", "𝑽", "𝑾", "𝑿", "𝒀",
             "𝒁"
-        }, StyleType.Style, true);
+        }, StyleType.Style, LetterCaseType.Uppercase);
         public static readonly AlphabetSet LatinBoldItalicLowercaseSet = new AlphabetSet("Latin Bold Italic Lowercase", new string[] {
             "𝒂", "𝒃", "𝒄", "𝒅", "𝒆",
             "𝒇", "𝒈", "𝒉", "𝒊", "𝒋",
@@ -85,7 +85,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝒑", "𝒒", "𝒓", "𝒔", "𝒕",
             "𝒖", "𝒗", "𝒘", "𝒙", "𝒚",
             "𝒛"
-        }, StyleType.Style, false);
+        }, StyleType.Style, LetterCaseType.Lowercase);
 
         /* Latin script glyphs */
         public static readonly AlphabetSet LatinScriptUppercaseSet = new AlphabetSet("Latin Script Uppercase", new string[] {
@@ -95,7 +95,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝒫", "𝒬", "ℛ", "𝒮", "𝒯",
             "𝒰", "𝒱", "𝒲", "𝒳", "𝒴",
             "𝒵"
-        }, StyleType.Style, true);
+        }, StyleType.Style, LetterCaseType.Uppercase);
         public static readonly AlphabetSet LatinScriptLowercaseSet = new AlphabetSet("Latin Script Lowercase", new string[] {
             "𝒶", "𝒷", "𝒸", "𝒹", "ℯ",
             "𝒻", "ℊ", "𝒽", "𝒾", "𝒿",
@@ -103,7 +103,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝓅", "𝓆", "𝓇", "𝓈", "𝓉",
             "𝓊", "𝓋", "𝓌", "𝓍", "𝓎",
             "𝓏"
-        }, StyleType.Style, false);
+        }, StyleType.Style, LetterCaseType.Lowercase);
 
         /* Latin script bold glyphs */
         public static readonly AlphabetSet LatinScriptBoldUppercaseSet = new AlphabetSet("Latin Script Bold Uppercase", new string[] {
@@ -113,7 +113,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝓟", "𝓠", "𝓡", "𝓢", "𝓣",
             "𝓤", "𝓥", "𝓦", "𝓧", "𝓨",
             "𝓩"
-        }, StyleType.Style, true);
+        }, StyleType.Style, LetterCaseType.Uppercase);
         public static readonly AlphabetSet LatinScriptBoldLowercaseSet = new AlphabetSet("Latin Script Bold Lowercase", new string[] {
             "𝓪", "𝓫", "𝓬", "𝓭", "𝓮",
             "𝓯", "𝓰", "𝓱", "𝓲", "𝓳",
@@ -121,7 +121,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝓹", "𝓺", "𝓻", "𝓼", "𝓽",
             "𝓾", "𝓿", "𝔀", "𝔁", "𝔂",
             "𝔃"
-        }, StyleType.Style, false);
+        }, StyleType.Style, LetterCaseType.Lowercase);
 
         /* Latin fraktur glyphs */
         public static readonly AlphabetSet LatinFrakturUppercaseSet = new AlphabetSet("Latin Fraktur Uppercase", new string[] {
@@ -131,7 +131,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝔓", "𝔔", "ℜ", "𝔖", "𝔗",
             "𝔘", "𝔙", "𝔚", "𝔛", "𝔜",
             "ℨ"
-        }, StyleType.Style, true);
+        }, StyleType.Style, LetterCaseType.Uppercase);
         public static readonly AlphabetSet LatinFrakturLowercaseSet = new AlphabetSet("Latin Fraktur Lowercase", new string[] {
             "𝔞", "𝔟", "𝔠", "𝔡", "𝔢",
             "𝔣", "𝔤", "𝔥", "𝔦", "𝔧",
@@ -139,7 +139,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝔭", "𝔮", "𝔯", "𝔰", "𝔱",
             "𝔲", "𝔳", "𝔴", "𝔵", "𝔶",
             "𝔷"
-        }, StyleType.Style, false);
+        }, StyleType.Style, LetterCaseType.Lowercase);
 
         /* Latin fraktur bold glyphs */
         public static readonly AlphabetSet LatinFrakturBoldUppercaseSet = new AlphabetSet("Latin Fraktur Bold Uppercase", new string[] {
@@ -149,7 +149,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝕻", "𝕼", "𝕽", "𝕾", "𝕿",
             "𝖀", "𝖁", "𝖂", "𝖃", "𝖄",
             "𝖅"
-        }, StyleType.Style, true);
+        }, StyleType.Style, LetterCaseType.Uppercase);
         public static readonly AlphabetSet LatinFrakturBoldLowercaseSet = new AlphabetSet("Latin Fraktur Bold Lowercase", new string[] {
             "𝖆", "𝖇", "𝖈", "𝖉", "𝖊",
             "𝖋", "𝖌", "𝖍", "𝖎", "𝖏",
@@ -157,7 +157,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝖕", "𝖖", "𝖗", "𝖘", "𝖙",
             "𝖚", "𝖛", "𝖜", "𝖝", "𝖞",
             "𝖟"
-        }, StyleType.Style, false);
+        }, StyleType.Style, LetterCaseType.Lowercase);
 
         /* Latin double-struck glyphs */
         public static readonly AlphabetSet LatinDoubleStruckUppercaseSet = new AlphabetSet("Latin Double-Struck Uppercase", new string[] {
@@ -167,7 +167,7 @@ namespace SDSK.Libs.Unikod.Common {
             "ℙ", "ℚ", "ℝ", "𝕊", "𝕋",
             "𝕌", "𝕍", "𝕎", "𝕏", "𝕐",
             "ℤ"
-        }, StyleType.Style, true);
+        }, StyleType.Style, LetterCaseType.Uppercase);
         public static readonly AlphabetSet LatinDoubleStruckLowercaseSet = new AlphabetSet("Latin Double-Struck Lowercase", new string[] {
             "𝕒", "𝕓", "𝕔", "𝕕", "𝕖",
             "𝕗", "𝕘", "𝕙", "𝕚", "𝕛",
@@ -175,7 +175,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝕡", "𝕢", "𝕣", "𝕤", "𝕥",
             "𝕦", "𝕧", "𝕨", "𝕩", "𝕪",
             "𝕫"
-        }, StyleType.Style, false);
+        }, StyleType.Style, LetterCaseType.Lowercase);
 
         /* Latin sans-serif glyphs */
         public static readonly AlphabetSet LatinSansSerifUppercaseSet = new AlphabetSet("Latin Sans-Serif Uppercase", new string[] {
@@ -185,7 +185,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝖯", "𝖰", "𝖱", "𝖲", "𝖳",
             "𝖴", "𝖵", "𝖶", "𝖷", "𝖸",
             "𝖹"
-        }, StyleType.Style, true);
+        }, StyleType.Style, LetterCaseType.Uppercase);
         public static readonly AlphabetSet LatinSansSerifLowercaseSet = new AlphabetSet("Latin Sans-Serif Lowercase", new string[] {
             "𝖺", "𝖻", "𝖼", "𝖽", "𝖾",
             "𝖿", "𝗀", "𝗁", "𝗂", "𝗃",
@@ -193,7 +193,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝗉", "𝗊", "𝗋", "𝗌", "𝗍",
             "𝗎", "𝗏", "𝗐", "𝗑", "𝗒",
             "𝗓"
-        }, StyleType.Style, false);
+        }, StyleType.Style, LetterCaseType.Lowercase);
 
         /* Latin sans-serif bold glyphs */
         public static readonly AlphabetSet LatinSansSerifBoldUppercaseSet = new AlphabetSet("Latin Sans-Serif Bold Uppercase", new string[] {
@@ -203,7 +203,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝗣", "𝗤", "𝗥", "𝗦", "𝗧",
             "𝗨", "𝗩", "𝗪", "𝗫", "𝗬",
             "𝗭"
-        }, StyleType.Style, true);
+        }, StyleType.Style, LetterCaseType.Uppercase);
         public static readonly AlphabetSet LatinSansSerifBoldLowercaseSet = new AlphabetSet("Latin Sans-Serif Bold Lowercase", new string[] {
             "𝗮", "𝗯", "𝗰", "𝗱", "𝗲",
             "𝗳", "𝗴", "𝗵", "𝗶", "𝗷",
@@ -211,7 +211,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝗽", "𝗾", "𝗿", "𝘀", "𝘁",
             "𝘂", "𝘃", "𝘄", "𝘅", "𝘆",
             "𝘇"
-        }, StyleType.Style, false);
+        }, StyleType.Style, LetterCaseType.Lowercase);
 
         /* Latin sans-serif italic glyphs */
         public static readonly AlphabetSet LatinSansSerifItalicUppercaseSet = new AlphabetSet("Latin Sans-Serif Italic Uppercase", new string[] {
@@ -221,7 +221,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝘗", "𝘘", "𝘙", "𝘚", "𝘛",
             "𝘜", "𝘝", "𝘞", "𝘟", "𝘠",
             "𝘡"
-        }, StyleType.Style, true);
+        }, StyleType.Style, LetterCaseType.Uppercase);
         public static readonly AlphabetSet LatinSansSerifItalicLowercaseSet = new AlphabetSet("Latin Sans-Serif Italic Lowercase", new string[] {
             "𝘢", "𝘣", "𝘤", "𝘥", "𝘦",
             "𝘧", "𝘨", "𝘩", "𝘪", "𝘫",
@@ -229,7 +229,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝘱", "𝘲", "𝘳", "𝘴", "𝘵",
             "𝘶", "𝘷", "𝘸", "𝘹", "𝘺",
             "𝘻"
-        }, StyleType.Style, false);
+        }, StyleType.Style, LetterCaseType.Lowercase);
 
         /* Latin sans-serif bold italic glyphs */
         public static readonly AlphabetSet LatinSansSerifBoldItalicUppercaseSet = new AlphabetSet("Latin Sans-Serif Bold Italic Uppercase", new string[] {
@@ -239,7 +239,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝙋", "𝙌", "𝙍", "𝙎", "𝙏",
             "𝙐", "𝙑", "𝙒", "𝙓", "𝙔",
             "𝙕"
-        }, StyleType.Style, true);
+        }, StyleType.Style, LetterCaseType.Uppercase);
         public static readonly AlphabetSet LatinSansSerifBoldItalicLowercaseSet = new AlphabetSet("Latin Sans-Serif Bold Italic Lowercase", new string[] {
             "𝙖", "𝙗", "𝙘", "𝙙", "𝙚",
             "𝙛", "𝙜", "𝙝", "𝙞", "𝙟",
@@ -247,7 +247,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝙥", "𝙦", "𝙧", "𝙨", "𝙩",
             "𝙪", "𝙫", "𝙬", "𝙭", "𝙮",
             "𝙯"
-        }, StyleType.Style, false);
+        }, StyleType.Style, LetterCaseType.Lowercase);
 
         /* Latin monospace glyphs */
         public static readonly AlphabetSet LatinMonospaceUppercaseSet = new AlphabetSet("Latin Monospace Uppercase", new string[] {
@@ -257,7 +257,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝙿", "𝚀", "𝚁", "𝚂", "𝚃",
             "𝚄", "𝚅", "𝚆", "𝚇", "𝚈",
             "𝚉"
-        }, StyleType.Style, true);
+        }, StyleType.Style, LetterCaseType.Uppercase);
         public static readonly AlphabetSet LatinMonospaceLowercaseSet = new AlphabetSet("Latin Monospace Lowercase", new string[] {
             "𝚊", "𝚋", "𝚌", "𝚍", "𝚎",
             "𝚏", "𝚐", "𝚑", "𝚒", "𝚓",
@@ -265,7 +265,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𝚙", "𝚚", "𝚛", "𝚜", "𝚝",
             "𝚞", "𝚟", "𝚠", "𝚡", "𝚢",
             "𝚣"
-        }, StyleType.Style, false);
+        }, StyleType.Style, LetterCaseType.Lowercase);
 
         /* Fullwidth Latin alphabets */
         public static readonly AlphabetSet LatinFullWidthUppercaseSet = new AlphabetSet("Latin Fullwidth Uppercase", new string[] {
@@ -275,7 +275,7 @@ namespace SDSK.Libs.Unikod.Common {
             "Ｐ", "Ｑ", "Ｒ", "Ｓ", "Ｔ",
             "Ｕ", "Ｖ", "Ｗ", "Ｘ", "Ｙ",
             "Ｚ"
-        }, StyleType.Style, true);
+        }, StyleType.Style, LetterCaseType.Uppercase);
         public static readonly AlphabetSet LatinFullWidthLowercaseSet = new AlphabetSet("Latin Fullwidth Lowercase", new string[] {
             "ａ", "ｂ", "ｃ", "ｄ", "ｅ",
             "ｆ", "ｇ", "ｈ", "ｉ", "ｊ",
@@ -283,7 +283,7 @@ namespace SDSK.Libs.Unikod.Common {
             "ｐ", "ｑ", "ｒ", "ｓ", "ｔ",
             "ｕ", "ｖ", "ｗ", "ｘ", "ｙ",
             "ｚ"
-        }, StyleType.Style, false);
+        }, StyleType.Style, LetterCaseType.Lowercase);
 
         /* Latin small alphabets */
         public static readonly AlphabetSet LatinSmallUppercaseSet = new AlphabetSet("Latin Small Uppercase", new string[] {
@@ -293,7 +293,7 @@ namespace SDSK.Libs.Unikod.Common {
             "ᴘ", "ꞯ", "ʀ", "ꜱ", "ᴛ",
             "ᴜ", "ᴠ", "ᴡ", null, "ʏ",
             "ᴢ"
-        }, StyleType.Style, true);
+        }, StyleType.Style, LetterCaseType.Uppercase);
 
         /* Modifier(Superscript) Latin alphabets */
         public static readonly AlphabetSet LatinModifierUppercaseSet = new AlphabetSet("Latin Modifier(Superscript) Uppercase", new string[] {
@@ -303,7 +303,7 @@ namespace SDSK.Libs.Unikod.Common {
             "ᴾ", null, "ᴿ", null, "ᵀ",
             "ᵁ", null, "ᵂ", null, null,
             null
-        }, StyleType.Style, true);
+        }, StyleType.Style, LetterCaseType.Uppercase);
         public static readonly AlphabetSet LatinModifierLowercaseSet = new AlphabetSet("Latin Modifier(Superscript) Lowercase", new string[] {
             "ᵃ", "ᵇ", "ᶜ", "ᵈ", "ᵉ",
             "ᶠ", "ᵍ", "ʰ", "ⁱ", "ʲ",
@@ -311,7 +311,7 @@ namespace SDSK.Libs.Unikod.Common {
             "ᵖ", null, "ʳ", "ˢ", "ᵗ",
             "ᵘ", "ᵛ", "ʷ", "ˣ", "ʸ",
             "ᶻ"
-        }, StyleType.Style, false);
+        }, StyleType.Style, LetterCaseType.Lowercase);
 
         /* Subscript Latin alphabets */
         public static readonly AlphabetSet LatinSubscriptLowercaseSet = new AlphabetSet("Latin Subscript Lowercase", new string[] {
@@ -321,7 +321,7 @@ namespace SDSK.Libs.Unikod.Common {
             "ₚ", null, "ᵣ", "ₛ", "ₜ",
             "ᵤ", "ᵥ", null, "ₓ", null,
             null
-        }, StyleType.Style, false);
+        }, StyleType.Style, LetterCaseType.Lowercase);
 
         /* Parenthesized Latin alphabets */
         public static readonly AlphabetSet LatinParenthesizedUppercaseSet = new AlphabetSet("Latin Parenthesized Uppercase", new string[] {
@@ -331,7 +331,7 @@ namespace SDSK.Libs.Unikod.Common {
             "🄟", "🄠", "🄡", "🄢", "🄣",
             "🄤", "🄥", "🄦", "🄧", "🄨",
             "🄩"
-        }, StyleType.Style, true);
+        }, StyleType.Style, LetterCaseType.Uppercase);
         public static readonly AlphabetSet LatinParenthesizedLowercaseSet = new AlphabetSet("Latin Parenthesized Lowercase", new string[] {
             "⒜", "⒝", "⒞", "⒟", "⒠",
             "⒡", "⒢", "⒣", "⒤", "⒥",
@@ -339,7 +339,7 @@ namespace SDSK.Libs.Unikod.Common {
             "⒫", "⒬", "⒭", "⒮", "⒯",
             "⒰", "⒱", "⒲", "⒳", "⒴",
             "⒵"
-        }, StyleType.Style, false);
+        }, StyleType.Style, LetterCaseType.Lowercase);
 
         /* Circled Latin alphabets */
         public static readonly AlphabetSet LatinCircledUppercaseSet = new AlphabetSet("Latin Circled Uppercase", new string[] {
@@ -349,7 +349,7 @@ namespace SDSK.Libs.Unikod.Common {
             "Ⓟ", "Ⓠ", "Ⓡ", "Ⓢ", "Ⓣ",
             "Ⓤ", "Ⓥ", "Ⓦ", "Ⓧ", "Ⓨ",
             "Ⓩ"
-        }, StyleType.Style, true);
+        }, StyleType.Style, LetterCaseType.Uppercase);
         public static readonly AlphabetSet LatinCircledLowercaseSet = new AlphabetSet("Latin Circled Lowercase", new string[] {
             "ⓐ", "ⓑ", "ⓒ", "ⓓ", "ⓔ",
             "ⓕ", "ⓖ", "ⓗ", "ⓘ", "ⓙ",
@@ -357,7 +357,7 @@ namespace SDSK.Libs.Unikod.Common {
             "ⓟ", "ⓠ", "ⓡ", "ⓢ", "ⓣ",
             "ⓤ", "ⓥ", "ⓦ", "ⓧ", "ⓨ",
             "ⓩ"
-        }, StyleType.Style, false);
+        }, StyleType.Style, LetterCaseType.Lowercase);
 
         /* Old italic letters */
         public static readonly AlphabetSet LatinOldItalicUppercaseSet = new AlphabetSet("Latin Old Italic Uppercase", new string[] {
@@ -367,7 +367,7 @@ namespace SDSK.Libs.Unikod.Common {
             "𐌓", "𐌒", null, "𐌔", "𐌕",
             null, null, null, "𐌗", "𐌖",
             null
-        }, StyleType.Style, true);
+        }, StyleType.Style, LetterCaseType.Uppercase);
         #endregion
 
         #region Obfuscation
@@ -379,7 +379,7 @@ namespace SDSK.Libs.Unikod.Common {
             "Ꮲ", null, "Ꭱ", "Ꮪ", "Ꭲ",
             null, "Ꮩ", "Ꮃ", null, null,
             "Ꮓ"
-        }, StyleType.Obfuscation, true);
+        }, StyleType.Obfuscation, LetterCaseType.Uppercase);
         public static readonly AlphabetSet CherokeeGlyphsLowercaseSet = new AlphabetSet("Cherokee Glyphs for Latin Lowercase Obfuscation", new string[] {
             null, "Ꮟ", null, null, null,
             null, null, "Ꮒ", "Ꭵ", null,
@@ -387,7 +387,7 @@ namespace SDSK.Libs.Unikod.Common {
             null, null, null, null, null,
             null, null, null, null, "Ꭹ",
             null
-        }, StyleType.Obfuscation, false);
+        }, StyleType.Obfuscation, LetterCaseType.Lowercase);
 
         /* Cherokee small glyphs */
         public static readonly AlphabetSet CherokeeSmallGlyphsUppercaseSet = new AlphabetSet("Cherokee Small Glyphs for Latin Uppercase Obfuscation", new string[] {
@@ -397,7 +397,7 @@ namespace SDSK.Libs.Unikod.Common {
             "ꮲ", null, "ꭱ", "ꮪ", "ꭲ",
             null, "ꮩ", "ꮃ", null, null,
             "ꮓ"
-        }, StyleType.Obfuscation, true);
+        }, StyleType.Obfuscation, LetterCaseType.Uppercase);
         public static readonly AlphabetSet CherokeeSmallGlyphsLowercaseSet = new AlphabetSet("Cherokee Small Glyphs for Latin Lowercase Obfuscation", new string[] {
             null, "ꮟ", null, "ꮷ", null,
             null, null, "ꮒ", "ꭵ", null,
@@ -405,7 +405,7 @@ namespace SDSK.Libs.Unikod.Common {
             "ꮅ", null, "ꮁ", null, null,
             "ꮼ", "ꮴ", "ꮤ", null, "ꮍ",
             null
-        }, StyleType.Obfuscation, false);
+        }, StyleType.Obfuscation, LetterCaseType.Lowercase);
 
         /* Roman glyphs */
         public static readonly AlphabetSet RomanGlyphsUppercaseSet = new AlphabetSet("Roman Glyphs for Latin Uppercase Obfuscation", new string[] {
@@ -415,7 +415,7 @@ namespace SDSK.Libs.Unikod.Common {
             null, null, null, null, null,
             null, "Ⅴ", null, "Ⅹ", null,
             null
-        }, StyleType.Obfuscation, true);
+        }, StyleType.Obfuscation, LetterCaseType.Uppercase);
         public static readonly AlphabetSet RomanGlyphsLowercaseSet = new AlphabetSet("Roman Glyphs for Latin Lowercase Obfuscation", new string[] {
             null, null, "ⅽ", "ⅾ", null,
             null, null, null, "ⅰ", null,
@@ -423,7 +423,7 @@ namespace SDSK.Libs.Unikod.Common {
             null, null, null, null, null,
             null, "ⅴ", null, "ⅹ", null,
             null
-        }, StyleType.Obfuscation, false);
+        }, StyleType.Obfuscation, LetterCaseType.Lowercase);
         
         /* Coptic glyphs */
         public static readonly AlphabetSet CopticGlyphsUppercaseSet = new AlphabetSet("Coptic Glyphs for Latin Uppercase Obfuscation", new string[] {
@@ -433,7 +433,7 @@ namespace SDSK.Libs.Unikod.Common {
             "Ⲣ", null, null, null, "Ⲧ",
             "Ⳙ", null, "Ⲱ", "Ⲭ", "Ⲩ",
             "Ⲍ"
-        }, StyleType.Obfuscation, true);
+        }, StyleType.Obfuscation, LetterCaseType.Uppercase);
 
         /* Tifinagh glyphs */
         public static readonly AlphabetSet TifinaghGlyphsUppercaseSet = new AlphabetSet("Tifinagh Glyphs for Latin Uppercase Obfuscation", new string[] {
@@ -443,7 +443,7 @@ namespace SDSK.Libs.Unikod.Common {
             null, "ⵕ", null, "ⵢ", null,
             "ⵡ", "ⴸ", null, "ⵝ", "ⵖ",
             null
-        }, StyleType.Obfuscation, true);
+        }, StyleType.Obfuscation, LetterCaseType.Uppercase);
 
         /* Lisu glyphs */
         public static readonly AlphabetSet LisuGlyphsUppercaseSet = new AlphabetSet("Lisu Glyphs for Latin Uppercase Obfuscation", new string[] {
@@ -453,7 +453,7 @@ namespace SDSK.Libs.Unikod.Common {
             "ꓑ", null, "ꓣ", "ꓢ", "ꓔ",
             "ꓴ", "ꓦ", "ꓪ", "ꓫ", "ꓬ",
             null
-        }, StyleType.Obfuscation, true);
+        }, StyleType.Obfuscation, LetterCaseType.Uppercase);
 
         /* Regional indicator symbol */
         public static readonly AlphabetSet RegionalIndicatorSymbolsUppercaseSet = new AlphabetSet("Regional Indicator Symbols for Latin Uppercase Obfuscation", new string[] {
@@ -463,7 +463,7 @@ namespace SDSK.Libs.Unikod.Common {
             "🇵","🇶","🇷","🇸","🇹",
             "🇺","🇻","🇼","🇽","🇾",
             "🇿"
-        }, StyleType.Obfuscation, true);
+        }, StyleType.Obfuscation, LetterCaseType.Uppercase);
         #endregion
         #endregion
 
@@ -654,7 +654,7 @@ namespace SDSK.Libs.Unikod.Common {
         #region Functions
         public static IUnikodSet GetSetByName(string name) {
             try {
-                return SetListAll.First(x => x.SetName.Equals(name, StringComparison.OrdinalIgnoreCase));
+                return SetListAll.First(x => x.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
             } catch(Exception exception)
               when (exception is InvalidOperationException || exception is ArgumentNullException) {
                 return null;        // No matching found or the argument is null

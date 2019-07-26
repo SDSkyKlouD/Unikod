@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 using SDSK.Libs.Unikod.Common;
-using SDSK.Libs.Unikod.Common.Types;
+using SDSK.Libs.Unikod.Types;
 
 namespace SDSK.Libs.Unikod {
     /// <summary>
@@ -34,14 +34,14 @@ namespace SDSK.Libs.Unikod {
                     bool? characterIsUppercase = null;
 
                     foreach(IUnikodSet normalSet in UnicodeSets.GetSetsByStyleType(StyleType.Normal)) {
-                        for(int i = 0, normalSetLength = normalSet.SetData.Length; i < normalSetLength; i++) {
-                            if(normalSet.SetData[i].Equals(character)) {
+                        for(int i = 0, normalSetLength = normalSet.Data.Length; i < normalSetLength; i++) {
+                            if(normalSet.Data[i].Equals(character)) {
                                 index = i;
                                 existInNormalSets = true;
                                 characterSetType = normalSet.GetType();
                                 
                                 if(normalSet is AlphabetSet alphabetSet) {
-                                    characterIsUppercase = alphabetSet.IsUppercase;
+                                    characterIsUppercase = alphabetSet.LetterCaseType == LetterCaseType.Uppercase;
                                 }
                             }
                         }
@@ -53,13 +53,13 @@ namespace SDSK.Libs.Unikod {
                         foreach(IUnikodSet targetSet in set) {
                             if(characterSetType == targetSet.GetType()) {
                                 if(targetSet is AlphabetSet alphabetSet) {
-                                    if(alphabetSet.IsUppercase != characterIsUppercase) {
+                                    if(alphabetSet.LetterCaseType == LetterCaseType.Uppercase != characterIsUppercase) {
                                         continue;
                                     }
                                 }
                                 
-                                if(targetSet.SetData[index] != null) {
-                                    builder.Append(targetSet.SetData[index]);
+                                if(targetSet.Data[index] != null) {
+                                    builder.Append(targetSet.Data[index]);
                                     found = true;
                                     break;
                                 }
@@ -101,13 +101,13 @@ namespace SDSK.Libs.Unikod {
 
                     foreach(IUnikodSet set in UnicodeSets.SetListAll) {
                         if(set != null) {
-                            int setIndex = Array.IndexOf(set.SetData, charToCheck);
+                            int setIndex = Array.IndexOf(set.Data, charToCheck);
 
                             if(setIndex != -1) {
                                 if(set is AlphabetSet alphabetSet) {
-                                    normalizedBuilder.Append(UnicodeSets.SetListLatin[alphabetSet.IsUppercase ? 0 : 1].SetData[setIndex]);
+                                    normalizedBuilder.Append(UnicodeSets.SetListLatin[alphabetSet.LetterCaseType == LetterCaseType.Uppercase ? 0 : 1].Data[setIndex]);
                                 } else if(set is NumberSet) {
-                                    normalizedBuilder.Append(UnicodeSets.SetListNumber[0].SetData[setIndex]);
+                                    normalizedBuilder.Append(UnicodeSets.SetListNumber[0].Data[setIndex]);
                                 }
 
                                 hasFound = true;
